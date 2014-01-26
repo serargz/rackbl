@@ -10,7 +10,6 @@ module Rackbl
     def call(env)
       req = Rack::Request.new(env)
       action = req.path == "/" ? "index" : req.path[1, req.path.length]
-      puts ">>>>>>>>>>> #{action}"
       if check(action)
         pages_controller = PagesController.new
         output = pages_controller.send action

@@ -1,3 +1,5 @@
+require 'renderer'
+
 module Rackbl
   class PagesController
 
@@ -11,8 +13,10 @@ module Rackbl
 
     def render(file)
       template = ERB.new File.read(file)
-      res = template.result(get_binding)
-      res
+      page = template.result(get_binding)
+      
+      renderer = Rackbl::Renderer.new(page)
+      renderer.render
     end
 
     def get_binding

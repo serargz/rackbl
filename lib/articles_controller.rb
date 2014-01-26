@@ -1,13 +1,23 @@
 module Rackbl
 
   class ArticlesController
-    def initialize(title = "", body = "")
-      @title = title
-      @body = body
+
+    def initialize(article)
+      @article = article
     end
 
-    def get_binding
-      binding
+    def render
+
+      article = YAML.load_file "articles/#{@article}.yml"
+      @title = article["title"]
+      @body = article["body"]
+
+      template = ERB.new File.read("templates/default/article.html.erb")
+      page = template.result(binding)
+    end
+
+    def exists?
+      File.exists? "articles/#{@article}.yml"
     end
   end
   
