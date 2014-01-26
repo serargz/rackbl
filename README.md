@@ -1,4 +1,4 @@
 rackbl
 ======
 
-Rackbl is a (very) tiny blog engine build in top of Rack.
+Rackbl is a (very) tiny blog engine buildt in top of Rack.
