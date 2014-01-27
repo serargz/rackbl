@@ -4,7 +4,7 @@ require 'rackbl'
 require 'pages_middleware'
 
 # Rack config
-use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico'], :root => 'public'
+use Rack::Static, :urls => ['/stylesheets', '/javascript', '/images'], root: "public"
 use Rack::CommonLogger
 use Rack::Reloader
 
