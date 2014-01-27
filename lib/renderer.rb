@@ -8,7 +8,7 @@ module Rackbl
     end
 
     def render
-      layout_file = "templates/default/layout.html.erb"
+      layout_file = "themes/default/layout.html.erb"
       layout = ERB.new File.read(layout_file)
 
       output = layout.result(binding)

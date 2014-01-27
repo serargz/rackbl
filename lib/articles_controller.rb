@@ -12,7 +12,7 @@ module Rackbl
       @title = article["title"]
       @body = article["body"]
 
-      template = ERB.new File.read("templates/default/article.html.erb")
+      template = ERB.new File.read("themes/default/article.html.erb")
       page = template.result(binding)
     end
 
