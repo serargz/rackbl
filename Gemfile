@@ -4,3 +4,4 @@ gem 'rack'
 gem 'rspec'
 gem 'rspec-html-matchers'
 gem "rack-test", require: "rack/test"
+gem 'coderay'
