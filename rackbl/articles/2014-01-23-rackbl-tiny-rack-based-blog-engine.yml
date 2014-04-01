@@ -1,0 +1,5 @@
+title: "Rackbl, Tiny rack based blog engine"
+date: "2014-01-23"
+body: |
+  <p>This is a test article of Rackbl, a (very) tiny blog engine created in top of Rack.</p>
+  <%= code_highlight "puts 'Hello world'", :ruby %>
