@@ -1,3 +1,4 @@
+require 'yaml'
 require 'articles_helper'
 
 module Rackbl
@@ -17,12 +18,13 @@ module Rackbl
       @title = article["title"]
       @body = ERB.new(body).result(binding)
 
-      template = ERB.new File.read("themes/default/article.html.erb")
+      template = ERB.new(File.read("themes/default/article.html.erb"))
       page = template.result(binding)
     end
 
     def exists?
-      File.exists? "articles/#{@article}.yml"
+      p "article: #{@article}"
+      File.exists? "./articles/#{@article}.yml"
     end
   end
 end

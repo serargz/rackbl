@@ -1,7 +1,3 @@
-require 'erb'
-require 'yaml'
-require 'articles_controller'
-
 module Rackbl
   class Server
     def call(env)
