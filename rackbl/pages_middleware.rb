@@ -10,7 +10,7 @@ module Rackbl
     def call(env)
       req = Rack::Request.new(env)
       action = req.path == "/" ? "index" : req.path[1, req.path.length]
-      if check(action)
+      if is_page?(action)
         pages_controller = PagesController.new
         output = pages_controller.send action
         if output
@@ -23,10 +23,12 @@ module Rackbl
       end
     end
 
-    def check(action)
+    # Check if exists a page for the requested resource
+    def is_page?(action)
       d = Dir.new "pages"
       d.each do |f|
         if f[0] != '.'
+          # TODO: Allow different kind of extensions
           return true if action == File.basename(f, ".html.erb")
         end
       end

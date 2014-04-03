@@ -4,6 +4,7 @@ require './rackbl/rackbl'
 theme = 'default'
 
 use Rack::Static, :urls => ['/css', '/js', '/img', '/foundation'], root: "themes/#{theme}/assets"
+
 use Rack::CommonLogger
 use Rack::Reloader
 

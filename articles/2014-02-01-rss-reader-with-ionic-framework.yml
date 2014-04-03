@@ -1,0 +1,6 @@
+title: "RSS Reader using Ionic Framework"
+date: "2014-04-02"
+body: |
+  <p><a href="http://ionicframework.com/">Ionic</a> is a framework for
+  building mobile native-like apps using javascript, html and css.</p>
+  <%= code_highlight "puts 'Hello world'", :ruby %>
